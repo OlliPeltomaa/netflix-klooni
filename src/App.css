@@ -144,6 +144,7 @@ li a {
   margin-right: 1vw;
 }
 
+
 #signedin:hover {
   cursor: pointer;
 }
@@ -344,11 +345,11 @@ li a {
 }
 
 #me {
-  width: clamp(39px, 20vw, 159px);
-  height: clamp(39px, 20vw, 159px);
-  background-image: linear-gradient(to bottom right, blue, lightblue);
+  width: clamp(40px, 20vw, 160px);
+  height: clamp(40px, 20vw, 160px);
+  background: linear-gradient(to bottom right, blue, lightblue);
   border-radius: 5%;
-  border: 2px blue solid;
+  border: 2px solid transparent;
 }
 
 #me:hover {
