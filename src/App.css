@@ -1,38 +1,453 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@500&family=Quicksand&family=Roboto+Slab&family=Staatliches&display=swap');
+
+* {
+  padding:0%;
+  margin: 0%;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media only screen and (max-width: 450px) {
+  #topleft .navlink {
+    display: none;
+  }
+
+  #dropdown {
+    display: block;
+    float: left;
+  }
+
+  #dropbtn {
+    margin: 3vw;
+    border: none;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    font-size: calc(3px + 1vw);
+  }
+
+  #dropdown-content {
+    display: none;
+    position: absolute;
+    top: 5vh;
+    left: 0vw;
+    background-color: rgba(0,0,0,0.8);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  #dropdown-content a {
+    float: none;
+    color: white;
+    font-size: calc(3px + 1vw);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+
+  #dropdown:hover #dropdown-content {
+    display: block;
+  }
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (min-width: 451px) {
+  #topleft .navlink {
+    display: block;
+  }
+
+  #dropdown {
+    display: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#logo {
+  color: red;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: lighter;
+  font-size: calc(8px + 2vw);
+  padding: 2vw;
+  margin-left: 3vw;
+}
+
+
+body {
+  background-color: rgb(22, 22, 22);
+  color: white;
+  overflow-x: hidden;
+}
+
+
+nav {
+  background-color: rgb(22, 22, 22);
+  position: fixed;
+  z-index: 2;
+  width: 100vw;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  float: left;
+}
+
+a {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+li a {
+  font-size: calc(3px + 1vw);
+  display: block;
+  text-align: center;
+  padding-top: 3vw;
+  padding-right: 1vw;
+  padding-left: 1vw;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#outer {
+  width: clamp(12px,1.5vw, 36px);
+  height: clamp(12px,1.5vw, 36px);
+  background-color: white;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+}
+
+#inner {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: black;
+  border-radius: 50%;
+  top: 25%;
+  left: 25%;
+}
+
+#handle {
+  position: absolute;
+  width: clamp(3.2px, 0.4vw, 9.6px);
+  height: clamp(4px,1vw, 12px);
+  background-color: white;
+  border-radius: 25%;
+  left: 85%;
+  top: 80%;
+  transform: rotate(-45deg);
+}
+
+#search, #bell, #acc {
+  margin-top: 2.5vw;
+  margin-left: 2vw;
+  margin-right: 1vw;
+}
+
+#signedin:hover {
+  cursor: pointer;
+}
+
+#topright {
+  float: right;
+  margin-right: 5vw;
+}
+
+#topright div {
+  display: block;
+}
+
+#bellbody {
+  position: relative;
+  width: clamp(10px,1.25vw,30px);
+  height:clamp(10px,1.25vw,30px);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  background-color: white;
+}
+
+#bellskirt {
+  position: absolute;
+  height: clamp(2.4px, 0.3vw, 7.2px);
+  width:clamp(16px, 2vw, 48px);
+  top: 90%;
+  left: -25%;
+  background-color: white;
+  border-radius: 25%;
+}
+
+#bellbtm {
+  position: absolute;
+  width: clamp(4px, 0.5vw, 12px);
+  height: clamp(4px, 0.5vw, 12px);
+  background-color: white;
+  border-radius: 50%;
+  left: 30%;
+  top:95%;
+}
+
+#acc {
+  background-image: linear-gradient(to bottom right, blue, lightblue);
+  width: clamp(15px, 2vw, 40px);
+  height: clamp(15px, 2vw, 40px);
+  border-radius: 25%;
+}
+
+#preview {
+  position: relative;
+  justify-items: center;
+  background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+  width: 100vw;
+  height: clamp(100px,50vw,400px);
+}
+
+#watch, #info {
+  position: absolute;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  top: 70%;
+  border: none;
+  border-radius: 5%;
+}
+
+#watch {
+  left:5vw;
+  background-color: white;
+}
+
+#info {
+  left: calc(13vw + 30px);
+  background-color: rgba(0,0,0,0.2);
+  color: white;
+}
+
+#previewname {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: clamp(10px, 4vw, 40px);
+  text-shadow: 2px 2px black;
+  position: absolute;
+  top: 55%;
+  left: 5%;
+}
+
+#watch:hover, #info:hover {
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.category {
+  font-size: calc(6px + 1vw);
+  margin-left: 5vw;
+  margin-top: 10vh;
+}
+
+.titles {
+  width: 90vw;
+  height:clamp(60px, 30vw, 100px);
+  margin: auto;
+  overflow: hidden;
+  white-space:nowrap;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.title {
+  height: 100%;
+  width: 150px;
+  display: inline-block;
+  vertical-align:top;
+  margin-right:20px;
+  white-space:normal;
+  background: linear-gradient(90deg, hsla(31, 90%, 76%, 1) 0%, hsla(302, 82%, 76%, 1) 100%);
+}
+
+.title:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.arrows {
+  position:absolute;
+  height:clamp(60px, 30vw, 100px);
+  width: clamp(10px, 5vw, 30px);
+}
+
+.arr {
+  width: 5px;
+  height: 15px;
+  position: relative;
+  background-color: rgba(255,255,255,0.9);
+}
+
+.leftarrow:hover, .rightarrow:hover {
+  cursor: pointer;
+}
+
+#leftarrtop {
+  transform: rotate(45deg);
+  left: 2vw;
+  top: 32.5%;
+}
+
+#leftarrbtm {
+  transform: rotate(-45deg);
+  left: 2vw;
+  top: 25%;
+}
+
+#rightarrtop {
+  transform: rotate(-45deg);
+  left: 2vw;
+  top: 32.5%;
+}
+
+#rightarrbtm {
+  transform: rotate(45deg);
+  left: 2vw;
+  top: 25%;
+}
+
+.leftarrow, .rightarrow {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 5vw;
+}
+
+.leftarrow {
+  left:0;
+  top: 0%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.rightarrow {
+  left: 85vw;
+  background-color: rgba(0,0,0,0.8);
+}
+
+#who {
+  margin: 2vh;
+  text-align: center;
+  font-weight: lighter;
+}
+
+#accounts {
+  display: flex;
+  justify-content: center;
+}
+
+#me, #add {
+  margin: 2vw;
+  color: gray;
+}
+
+#me {
+  width: clamp(39px, 20vw, 159px);
+  height: clamp(39px, 20vw, 159px);
+  background-image: linear-gradient(to bottom right, blue, lightblue);
+  border-radius: 5%;
+  border: 2px blue solid;
+}
+
+#me:hover {
+  border: 2px white solid;
+  cursor: pointer;
+  color: white;
+}
+
+#me p {
+  position: relative;
+  top: 105%;
+  text-align: center;
+  font-size: smaller;
+}
+
+#add {
+  width: clamp(40px, 20vw, 160px);
+  height: clamp(40px, 20vw, 160px);
+  border-radius: 5%;
+  background-color: rgb(22, 22, 22);
+}
+
+#circle {
+  width: clamp(20px, 10vw, 80px);
+  height: clamp(20px, 10vw, 80px);
+  position: relative;
+  top: 25%;
+  left: 25%;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+#add:hover{
+  background-color: white;
+  cursor: pointer;
+  color: white;
+}
+
+#vert {
+  background-color: rgb(22, 22, 22);
+}
+
+#vert {
+  position: relative;
+  left: 46%;
+  top: -15%;
+  width: clamp(3.125px, 1.56vw, 12.5px);
+  height: clamp(12.5px, 6.25vw, 50px);
+  border-radius: 5%;
+  background-color: inherit;
+}
+
+#hori {
+  position: relative;
+  left: 46%;
+  top: -45.5%;
+  width: clamp(3.125px, 1.56vw, 12.5px);
+  height: clamp(12.5px, 6.25vw, 50px);
+  border-radius: 5%;
+  background-color:inherit;
+  transform: rotate(90deg);
+}
+
+#add p {
+  position: relative;
+  top: 155%;
+  text-align: center;
+  font-size: smaller;
+}
+
+#manage {
+  margin: auto;
+  margin-top: 5vh;
+  width: fit-content;
+  border: 2px gray solid;
+  text-align: center;
+  color: gray;
+}
+
+#manage p {
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+#manage:hover {
+  cursor: pointer;
+  color: white;
+  border: 2px white solid;
+}
+
+#profcontainer {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#categories {
+  margin-bottom: 10vh;
 }
